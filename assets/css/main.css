@@ -54,11 +54,12 @@
     color: #ffffff; }
     #nav a.top-link span {
       position: absolute;
+      position: absolute;
       top: 50%;
       left: 50%;
+      transform: translate(-50%, -50%);
       font-size: 1.5em;
       margin: 0;
-      transform: translate(-50%, -50%);
       font-weight: 300; }
     #nav a.top-link this:visted {
       outline: none;

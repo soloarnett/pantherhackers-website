@@ -64,6 +64,13 @@ $color-ph-blue: #125ca9;
     border-radius: $radius;
 }
 
+@mixin absoluteMiddle(){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 //---------END VARIABLES---------//
 
 
@@ -109,14 +116,10 @@ $color-ph-blue: #125ca9;
     
     a.top-link{
         span{
-//            @include relLeftFloat();
             position: absolute;
-            top: 50%;
-            left: 50%;
+            @include absoluteMiddle();
             font-size: 1.5em;
             margin: 0;
-//            padding: 0px 20px;
-            transform: translate(-50%, -50%);
             font-weight: 300;
         }
         @include noDecoration();
