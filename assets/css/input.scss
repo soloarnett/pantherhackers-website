@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
+
+// --------VARIABLES---------//
+
+//nav
+
+$nav-height: 60px;
+
+//fonts
+
+$main-font: 'Source Sans Pro', sans-serif;
+
+//colors
+
+$color-dark-grey: #666666;
+$color-ph-blue: #125ca9;
+
+//mixins
+
+@mixin relLeftFloat(){
+    position: relative;
+    float: left;
+}
+
+@mixin noDecoration(){
+    this:visted{
+        outline: none;
+        text-decoration: none;
+        color: inherit;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+@mixin quickTransition($attribute){
+    -moz-transition: $attribute .1s ease-in;
+    -o-transition: $attribute .1s ease-in;
+    -webkit-transition: $attribute .1s ease-in;
+    transition: $attribute .1s ease-in;
+}
+
+@mixin transition($attribute, $time, $delay){
+    -moz-transition: $attribute $time ease-in;
+    -o-transition: $attribute $time ease-in;
+    -webkit-transition: $attribute $time ease-in;
+    transition: $attribute $time ease-in; 
+    -webkit-transition-delay: $delay;
+    transition-delay: $delay;
+}
+
+@mixin noList(){
+    list-style: none;
+    list-style-image: none;
+    list-style-type: none;
+}
+
+@mixin borderRadius($radius){
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+//---------END VARIABLES---------//
+
+
+*{
+    font-family: $main-font;
+    z-index: 1;
+}
+
+.body{
+	background-color: $color-dark-grey;
+	margin: 0;
+	overflow: auto;
+}
+
+.container{
+	@include relLeftFloat();
+    margin-top: $nav-height;
+	height: auto;
+	width: 100%;
+    min-height: 500px;
+}
+
+.text{
+    @include relLeftFloat();
+}
+
+.top-block{
+    @include relLeftFloat();
+    width: 100%;
+    height: 50vh;
+    min-height: 413px;
+}
+
+#nav{
+    position: fixed;
+    float: left;
+    width: 100%;
+    height: $nav-height;
+    z-index: 999;
+    background-color: black;
+    overflow: hidden;
+    @include transition(all, 0.2s,0s);
+    
+    a.top-link{
+        span{
+            @include relLeftFloat();
+            font-size: 1.5em;
+            margin-top: 50%;
+            transform: translateY(-50%);
+            font-weight: 300;
+        }
+        @include noDecoration();
+        @include relLeftFloat();
+        padding: 0px 40px;
+        height: $nav-height;
+        text-align: center;
+        color: #ffffff;
+    }
+    a.top-link:nth-child(3){
+        float: right;
+    }
+    
+    a.top-link.ph-mid{
+        position: absolute;
+        left: 50%;
+//        margin-left: 0;
+        padding: 0;
+        float: none;
+        transform: translateX(-50%);
+        text-align: center;
+        span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 2.5em;
+            margin: 0;
+            transform: translate(-50%, -50%);
+            font-weight: 800;
+            color: $color-ph-blue;
+        }
+//        position: absolute;
+//        span{
+//            @include relLeftFloat();
+//            font-size: 1.5em;
+//            margin-top: 50%;
+//            transform: translateY(-50%);
+//        }
+    }
+    
+    .nav-content{
+        a{ @include noDecoration(); }
+        ul{ padding: 0; }
+        li{ 
+            @include noList();
+            @include borderRadius(5px);
+            @include quickTransition(all);
+            font-size: 1.3em;
+            padding: 10px 40px;
+            
+        }
+        
+        li:hover{
+            background-color: $color-ph-blue;
+        }
+        padding: 0px 20px;
+        @include relLeftFloat();
+        clear: both;
+        height: auto;
+        width: auto;
+        margin-left: 10vw;
+        color: white;
+    }
+    
+    .ph-logo{
+        position: absolute;
+        visibility: hidden;
+        bottom: 20px;
+        clear: both;
+        height: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include transition(all, 0s, 0s);
+        opacity: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        
+        @media(min-width:400px){
+            width: 50%;
+            background-image: url(../img/ph-logo/ph-logo-300.png);    
+        }
+        
+        @media(min-width:600px){
+            width: 40%;
+            background-image: url(../img/ph-logo/ph-logo-400.png);    
+        }
+        
+        @media(min-width:800px){
+            width: 35%;
+            background-image: url(../img/ph-logo/ph-logo-500.png);    
+        }
+        
+        @media(min-width:1000px){
+            width: 30%;
+            background-image: url(../img/ph-logo/ph-logo-600.png);    
+        }
+    }
+    
+    
+    
+}
+
+#nav{
+    a.top-link:nth-child(1){
+        display: block;
+    }
+    a.top-link:nth-child(2){
+        display: none;
+    }
+}
+
+#nav:target{
+    height: 100vh;
+    a.top-link:nth-child(1){
+        display: none;
+    }
+    a.top-link:nth-child(2){
+        display: block;
+    }
+    .ph-logo{
+        @include transition(all, 0.1s, 0.15s);
+        visibility: visible;
+        opacity: 1;
+    }
+}

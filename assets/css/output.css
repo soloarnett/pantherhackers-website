@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700");
+* {
+  font-family: 'Source Sans Pro', sans-serif; }
+
+.body {
+  background-color: #666;
+  margin: 0;
+  overflow: auto; }
+
+.container {
+  position: relative;
+  float: left;
+  height: auto;
+  width: 100%;
+  min-height: 500px; }
+
+.text {
+  position: relative;
+  float: left; }
+
+.top-block {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 50vh;
+  min-height: 413px; }
+
+.nav {
+  position: fixed;
+  float: left;
+  width: 100%;
+  height: 60px;
+  z-index: 999;
+  background-color: black;
+  overflow: hidden;
+  -moz-transition: all .2s ease-in;
+  -o-transition: all .2s ease-in;
+  -webkit-transition: all .2s ease-in;
+  transition: all .2s ease-in; }
+
+.nav a:nth-child(1), a:nth-child(2) {
+  font-size: 2em;
+  position: relative;
+  float: left;
+  margin-left: 20px;
+  margin-top: 30px;
+  transform: translateY(-20px);
+  color: #ffffff;
+  text-decoration: none; }
+
+#nav a:nth-child(1) {
+  display: block; }
+
+#nav a:nth-child(2) {
+  display: none; }
+
+#nav:target {
+  height: 100vh; }
+
+#nav:target a:nth-child(1) {
+  display: none; }
+
+#nav:target a:nth-child(2) {
+  display: block; }
+
+/*# sourceMappingURL=output.css.map */
