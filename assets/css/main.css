@@ -136,11 +136,9 @@
     opacity: 0;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center; }
-    @media (min-width: 400px) {
-      #nav .ph-logo {
-        width: 50%;
-        background-image: url(../img/ph-logo/ph-logo-300.png); } }
+    background-position: center;
+    width: 50%;
+    background-image: url(../img/ph-logo/ph-logo-300.png); }
     @media (min-width: 600px) {
       #nav .ph-logo {
         width: 40%;

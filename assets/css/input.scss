@@ -190,11 +190,9 @@ $color-ph-blue: #125ca9;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        width: 50%;
+        background-image: url(../img/ph-logo/ph-logo-300.png);    
         
-        @media(min-width:400px){
-            width: 50%;
-            background-image: url(../img/ph-logo/ph-logo-300.png);    
-        }
         
         @media(min-width:600px){
             width: 40%;
