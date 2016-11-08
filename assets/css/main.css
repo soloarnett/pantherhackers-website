@@ -83,6 +83,7 @@
       height: 30px;
       background-image: url(../img/ph-logo/ph-logo-sm-98.png);
       background-size: contain;
+      background-repeat: no-repeat;
       position: absolute;
       top: 50%;
       left: 50%;
