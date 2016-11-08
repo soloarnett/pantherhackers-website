@@ -125,6 +125,8 @@
         clear: both;
         height: 100px;
         left: 50%;
+        max-width: 350px;
+        min-width: 160px;
         transform: translateX(-50%);
         @include transition(all, 0s, 0s);
         opacity: 0;
