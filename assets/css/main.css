@@ -59,6 +59,16 @@
       text-decoration: none;
       color: inherit;
       -webkit-tap-highlight-color: transparent; }
+  #nav a.ph-logo-link {
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent; }
+    #nav a.ph-logo-link this:visted {
+      outline: none;
+      text-decoration: none;
+      color: inherit;
+      -webkit-tap-highlight-color: transparent; }
   #nav a.top-link:nth-child(3) {
     float: right; }
   #nav a.top-link.ph-mid {
