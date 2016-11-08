@@ -1,0 +1,87 @@
+// --------VARIABLES---------//
+
+//nav
+
+$nav-height: 60px;
+
+//fonts
+
+$main-font: 'Source Sans Pro', sans-serif;
+
+//colors
+
+$color-dark-grey: #666666;
+$color-ph-blue: #125ca9;
+
+//mixins
+
+@mixin relLeftFloat(){
+    position: relative;
+    float: left;
+}
+
+@mixin noDecoration(){
+    this:visted{
+        outline: none;
+        text-decoration: none;
+        color: inherit;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    outline: none;
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+@mixin quickTransition($attribute){
+    -moz-transition: $attribute .1s ease-in;
+    -o-transition: $attribute .1s ease-in;
+    -webkit-transition: $attribute .1s ease-in;
+    transition: $attribute .1s ease-in;
+}
+
+@mixin transition($attribute, $time, $delay){
+    -moz-transition: $attribute $time ease-in;
+    -o-transition: $attribute $time ease-in;
+    -webkit-transition: $attribute $time ease-in;
+    transition: $attribute $time ease-in; 
+    -webkit-transition-delay: $delay;
+    transition-delay: $delay;
+}
+
+@mixin noList(){
+    list-style: none;
+    list-style-image: none;
+    list-style-type: none;
+}
+
+@mixin unselectable(){
+    -webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+}
+
+@mixin borderRadius($radius){
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin absoluteMiddle(){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin socialLinkSize(){
+    width: 40px;
+    height: 40px;
+}
+
+//---------END VARIABLES---------//

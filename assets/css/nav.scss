@@ -1,0 +1,185 @@
+#nav{
+    position: fixed;
+    float: left;
+    width: 100%;
+    height: $nav-height;
+    z-index: 999;
+    min-width: 240px;
+    background-color: black;
+    overflow: hidden;
+    @include transition(all, 0.2s,0s);
+    
+    a.top-link{
+        span{
+            position: absolute;
+            @include absoluteMiddle();
+            font-size: 1.5em;
+            margin: 0;
+            font-weight: 300;
+        }
+        @include noDecoration();
+        @include relLeftFloat();
+        padding: 0px 60px;
+        height: $nav-height;
+        text-align: center;
+        color: #ffffff;
+    }
+    a.top-link:nth-child(3){
+        float: right;
+    }
+    
+    a.top-link.ph-mid{
+        position: absolute;
+        left: 50%;
+//        margin-left: 0;
+        padding: 0;
+        float: none;
+        transform: translateX(-50%);
+        text-align: center;
+        span{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 2em;
+            margin: 0;
+            transform: translate(-50%, -50%);
+            font-weight: 800;
+            color: $color-ph-blue;
+        }
+//        position: absolute;
+//        span{
+//            @include relLeftFloat();
+//            font-size: 1.5em;
+//            margin-top: 50%;
+//            transform: translateY(-50%);
+//        }
+    }
+    
+    .nav-content{
+        a{ @include noDecoration(); }
+        ul{ padding: 0; }
+        li{ 
+            @include noList();
+            @include borderRadius(5px);
+            @include quickTransition(all);
+            font-size: 1.3em;
+            padding: 10px 40px;
+            min-width: 224px;
+            
+        }
+        
+        li:hover{
+            background-color: $color-ph-blue;
+        }
+        padding: 0px 20px;
+        @include relLeftFloat();
+        clear: both;
+        height: auto;
+        width: auto;
+        margin-left: 10vw;
+        color: white;
+    }
+    
+    .social-links{
+        position: absolute;
+        bottom: 120px;
+        width: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        visibility: hidden;
+        opacity: 0;
+        @include transition(all, 0s, 0s);
+        span{
+            @include unselectable();
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            cursor: default;
+            color: white;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        a{
+            @include noDecoration();
+        }
+        i{
+            color: white;
+            font-size:30px;
+        }
+        ul{
+            li{
+                display: inline-block;
+                cursor: pointer;
+                @include socialLinkSize();
+            }
+            min-width: 170px;
+            cursor: default;
+            padding: 0;
+        }
+    }
+    
+    .ph-logo{
+        position: absolute;
+        visibility: hidden;
+        bottom: 20px;
+        clear: both;
+        height: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include transition(all, 0s, 0s);
+        opacity: 0;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 50%;
+        background-image: url(../img/ph-logo/ph-logo-300.png);    
+        
+        
+        @media(min-width:600px){
+            width: 40%;
+            background-image: url(../img/ph-logo/ph-logo-400.png);    
+        }
+        
+        @media(min-width:800px){
+            width: 35%;
+            background-image: url(../img/ph-logo/ph-logo-500.png);    
+        }
+        
+        @media(min-width:1000px){
+            width: 30%;
+            background-image: url(../img/ph-logo/ph-logo-600.png);    
+        }
+    }
+    
+    
+    
+}
+
+#nav{
+    a.top-link:nth-child(1){
+        display: block;
+    }
+    a.top-link:nth-child(2){
+        display: none;
+    }
+}
+
+#nav:target{
+    height: 100vh;
+    a.top-link:nth-child(1){
+        display: none;
+    }
+    a.top-link:nth-child(2){
+        display: block;
+    }
+    .ph-logo{
+        @include transition(all, 0.1s, 0.15s);
+        visibility: visible;
+        opacity: 1;
+    }
+    .social-links{
+        @include transition(all, 0.1s, 0.15s);
+        visibility: visible;
+        opacity: 1;
+    }
+}
