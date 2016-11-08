@@ -78,6 +78,15 @@
     float: none;
     transform: translateX(-50%);
     text-align: center; }
+    #nav a.top-link.ph-mid .ph-sm-img {
+      width: 74px;
+      height: 30px;
+      background-image: url(../img/ph-logo/ph-logo-sm-98.png);
+      background-size: contain;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
     #nav a.top-link.ph-mid span {
       position: absolute;
       top: 50%;
