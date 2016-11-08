@@ -10,10 +10,17 @@
 </head>
 <body class="body">
     <div class="nav" id="nav">
-        <a class="top-link" href="#nav"><span>Menu</span></a>
-        <a class="top-link" href="#"><span>Close</span></a>
+        <a class="top-link" href="#nav">
+            <span>Menu</span>
+            <i class="fa fa-bars fa-fw"></i>
+        </a>
+        <a class="top-link" href="#">
+            <span>Close</span>
+            <i class="fa fa-close fa-fw"></i>
+        </a>
         <a class="top-link" href="#" target="_blank"><span>Slack</span></a>
-        <a class="top-link ph-mid" href="#"><span>PH</span></a>
+        <a class="top-link ph-mid ph-mid-closed" href="#nav"><span>PH</span></a>
+        <a class="top-link ph-mid ph-mid-open" href="#"><span>PH</span></a>
         <div class="nav-content">
             <ul>
                 <a class="inner-link" href="#blog"><li>Blog</li></a>
@@ -40,6 +47,10 @@
             </ul>
         </div>
         <div class="ph-logo"></div>
+        <a class="top-link" href="#" id="bottom-closer">
+            <i class="fa fa-close fa-fw"></i>
+            <span>close</span>
+        </a>
     </div>
 	<div class="container">
         <div class="top-block"></div>

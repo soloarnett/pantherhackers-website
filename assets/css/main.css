@@ -10,11 +10,10 @@
 
 #nav {
   position: fixed;
-  float: left;
   width: 100%;
   height: 60px;
   z-index: 999;
-  min-width: 240px;
+  min-width: 323px;
   background-color: black;
   overflow: hidden;
   -moz-transition: all 0.2s ease-in;
@@ -23,6 +22,18 @@
   transition: all 0.2s ease-in;
   -webkit-transition-delay: 0s;
   transition-delay: 0s; }
+  @media (max-width: 500px) {
+    #nav {
+      bottom: 0; } }
+  #nav #bottom-closer {
+    -moz-transition: all 0s ease-in;
+    -o-transition: all 0s ease-in;
+    -webkit-transition: all 0s ease-in;
+    transition: all 0s ease-in;
+    -webkit-transition-delay: 0s;
+    transition-delay: 0s;
+    visibility: hidden;
+    opacity: 0; }
   #nav a.top-link {
     outline: none;
     text-decoration: none;
@@ -31,17 +42,17 @@
     position: relative;
     float: left;
     padding: 0px 60px;
+    clear: none;
     height: 60px;
     text-align: center;
     color: #ffffff; }
     #nav a.top-link span {
-      position: absolute;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: relative;
+      float: left;
       font-size: 1.5em;
       margin: 0;
+      top: 50%;
+      transform: translateY(-50%);
       font-weight: 300; }
     #nav a.top-link this:visted {
       outline: none;
@@ -101,7 +112,7 @@
       transition: all 0.1s ease-in;
       font-size: 1.3em;
       padding: 10px 40px;
-      min-width: 224px; }
+      min-width: 150px; }
     #nav .nav-content li:hover {
       background-color: #125ca9; }
   #nav .social-links {
@@ -191,18 +202,77 @@
       #nav .ph-logo {
         width: 30%;
         background-image: url(../img/ph-logo/ph-logo-600.png); } }
+  #nav .ph-mid-open {
+    display: none; }
+  #nav .ph-mid-closed {
+    display: block; }
 
 #nav a.top-link:nth-child(1) {
   display: block; }
+  #nav a.top-link:nth-child(1) i {
+    display: none; }
+  @media (max-width: 500px) {
+    #nav a.top-link:nth-child(1) {
+      padding: 0px 60px; }
+      #nav a.top-link:nth-child(1) span {
+        display: none; }
+      #nav a.top-link:nth-child(1) i {
+        display: block;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.5em; } }
 #nav a.top-link:nth-child(2) {
   display: none; }
 
 #nav:target {
   height: 100vh; }
+  @media (max-width: 500px) {
+    #nav:target #bottom-closer {
+      -moz-transition: opacity 0.1s ease-in;
+      -o-transition: opacity 0.1s ease-in;
+      -webkit-transition: opacity 0.1s ease-in;
+      transition: opacity 0.1s ease-in;
+      -webkit-transition-delay: 0.15s;
+      transition-delay: 0.15s;
+      position: absolute;
+      width: auto;
+      top: calc(100% - 40px);
+      transform: translateX(-50%);
+      left: 50%;
+      visibility: visible;
+      opacity: 1; }
+      #nav:target #bottom-closer span {
+        display: none;
+        position: relative;
+        float: left;
+        top: -5px;
+        left: 0;
+        transform: none; }
+      #nav:target #bottom-closer i {
+        display: inline;
+        position: relative;
+        float: left;
+        font-size: 1.5em; } }
   #nav:target a.top-link:nth-child(1) {
     display: none; }
   #nav:target a.top-link:nth-child(2) {
     display: block; }
+    #nav:target a.top-link:nth-child(2) i {
+      display: none; }
+    @media (max-width: 500px) {
+      #nav:target a.top-link:nth-child(2) {
+        padding: 0px 60px; }
+        #nav:target a.top-link:nth-child(2) span {
+          display: none; }
+        #nav:target a.top-link:nth-child(2) i {
+          display: block;
+          position: relative;
+          float: left;
+          top: 50%;
+          transform: translateY(-50%);
+          font-size: 1.5em;
+          color: white; } }
   #nav:target .ph-logo {
     -moz-transition: all 0.1s ease-in;
     -o-transition: all 0.1s ease-in;
@@ -221,6 +291,10 @@
     transition-delay: 0.15s;
     visibility: visible;
     opacity: 1; }
+  #nav:target .ph-mid-open {
+    display: block; }
+  #nav:target .ph-mid-closed {
+    display: none; }
 
 .container {
   position: relative;

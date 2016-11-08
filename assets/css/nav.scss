@@ -1,25 +1,37 @@
 #nav{
     position: fixed;
-    float: left;
+     @media(max-width:500px){
+        bottom: 0;
+    }
     width: 100%;
     height: $nav-height;
     z-index: 999;
-    min-width: 240px;
+    min-width: 323px;
     background-color: black;
     overflow: hidden;
     @include transition(all, 0.2s,0s);
     
+    #bottom-closer{
+        @include transition(all, 0s, 0s);
+        visibility: hidden;
+        opacity: 0;
+    }
+    
     a.top-link{
         span{
-            position: absolute;
-            @include absoluteMiddle();
+            position: relative;
+            float: left;
+//            @include absoluteMiddle();
             font-size: 1.5em;
             margin: 0;
+            top: 50%;
+            transform: translateY(-50%);
             font-weight: 300;
         }
         @include noDecoration();
         @include relLeftFloat();
         padding: 0px 60px;
+        clear: none;
         height: $nav-height;
         text-align: center;
         color: #ffffff;
@@ -64,7 +76,7 @@
             @include quickTransition(all);
             font-size: 1.3em;
             padding: 10px 40px;
-            min-width: 224px;
+            min-width: 150px;
             
         }
         
@@ -152,14 +164,36 @@
             background-image: url(../img/ph-logo/ph-logo-600.png);    
         }
     }
+    .ph-mid-open{
+        display: none;
+    }
+    .ph-mid-closed{
+        display: block;
+    }
     
     
-    
+      
 }
 
 #nav{
     a.top-link:nth-child(1){
         display: block;
+        i{
+            display: none;
+        }
+        @media(max-width:500px){
+            span{
+                display: none;
+            }
+            i{
+                display: block;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 1.5em;
+            }
+            padding: 0px 60px;
+        }
     }
     a.top-link:nth-child(2){
         display: none;
@@ -167,12 +201,57 @@
 }
 
 #nav:target{
+    @media(max-width:500px){
+        #bottom-closer{
+             @include transition(opacity, 0.1s, 0.15s);
+            
+            position: absolute;
+            width: auto;
+            top: calc(100% - 40px);
+            transform: translateX(-50%);
+            left: 50%;
+            visibility: visible;
+            opacity: 1;
+            span{
+                display: none;
+                position: relative;
+                float:left;
+                top: -5px;
+                left: 0;
+                transform: none;
+            }
+            i{
+                display: inline;
+                position: relative;
+                float: left;
+                font-size: 1.5em;
+            }
+        }
+    }
     height: 100vh;
     a.top-link:nth-child(1){
         display: none;
     }
     a.top-link:nth-child(2){
         display: block;
+        i{
+            display: none;
+        }
+        @media(max-width:500px){
+            span{
+                display: none;
+            }
+            i{
+                display: block;
+                position: relative;
+                float: left;
+                top: 50%;
+                transform: translateY(-50%);
+                font-size: 1.5em;
+                color: white;
+            }
+            padding: 0px 60px;
+        }
     }
     .ph-logo{
         @include transition(all, 0.1s, 0.15s);
@@ -183,5 +262,11 @@
         @include transition(all, 0.1s, 0.15s);
         visibility: visible;
         opacity: 1;
+    }
+    .ph-mid-open{
+        display: block;
+    }
+    .ph-mid-closed{
+        display: none;
     }
 }
