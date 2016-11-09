@@ -79,6 +79,12 @@ $color-ph-blue: #125ca9;
     transform: translate(-50%, -50%);
 }
 
+@mixin absoluteMiddleX(){
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 @mixin socialLinkSize(){
     width: 40px;
     height: 40px;
