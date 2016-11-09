@@ -373,10 +373,15 @@
           background-color: #125ca9;
           text-align: center;
           margin: 20px 0px;
-          padding-top: 20px;
-          padding-bottom: 20px;
-          font-size: 1.3em;
-          font-weight: 300; } }
+          padding: 20px 20px;
+          font-size: 1.2em;
+          font-weight: 800; }
+      #nav .ph-logo {
+        display: none; }
+      #nav .social-links {
+        bottom: 40px; }
+        #nav .social-links span {
+          display: none; } }
 
 #nav:target {
   /**
