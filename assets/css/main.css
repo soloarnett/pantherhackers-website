@@ -60,6 +60,7 @@
       color: inherit;
       -webkit-tap-highlight-color: transparent; }
     #nav a.top-link span {
+      width: 74px;
       position: relative;
       float: left;
       font-size: 1.5em;
@@ -86,10 +87,33 @@
         
     **/
     z-index: 999;
+    top: 0;
+    display: block;
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); }
+    transform: translateX(-50%); }
+    #nav a.top-link.menu i {
+      /**
+          
+      **/
+      display: none;
+      color: white; }
+    @media (max-width: 500px) {
+      #nav a.top-link.menu {
+        /**
+            
+        **/
+        padding: 0px calc(100%/12); }
+        #nav a.top-link.menu span {
+          /**
+              
+          **/
+          display: none; }
+        #nav a.top-link.menu i {
+          /**
+              
+          **/
+          display: block; } }
   #nav a.top-link.slack {
     /**
         
@@ -315,51 +339,33 @@
         
     **/
     display: block; }
-  #nav a.top-link.menu {
-    /**
-        
-    **/
-    display: block; }
-    #nav a.top-link.menu i {
-      /**
-          
-      **/
-      display: none;
-      color: white; }
-    @media (max-width: 500px) {
-      #nav a.top-link.menu {
-        /**
-            
-        **/
-        padding: 0px calc(100%/12); }
-        #nav a.top-link.menu span {
-          /**
-              
-          **/
-          display: none; }
-        #nav a.top-link.menu i {
-          /**
-              
-          **/
-          display: block;
-          position: relative;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          font-size: 1.5em; } }
   #nav a.top-link.close {
     /**
         
     **/
-    display: none; }
+    display: none;
+    visibility: hidden;
+    opacity: 0; }
   @media (max-width: 500px) {
     #nav {
       /**
           
       **/
       bottom: 0; }
-      #nav a.top-link.menu {
-        padding: 0; }
+      #nav a.top-link.menu, #nav a.top-link.close {
+        /**
+            used to increase non visible space that the menu button takes up so that users
+            on mobile devices will find it easier to press the button. reduces mispresses 
+        **/
+        padding: 0;
+        padding-left: 100px; }
+        #nav a.top-link.menu i, #nav a.top-link.close i {
+          padding-right: 100px;
+          position: relative;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          font-size: 1.5em; }
       #nav .nav-content {
         /**
             
@@ -383,19 +389,18 @@
         #nav .social-links span {
           display: none; } }
 
-#nav:target {
+#nav.open, #nav:target {
   /**
       
   **/
-  height: 100vh; }
-  #nav:target a.top-link.menu {
+  height: 100%; }
+  #nav.open a.top-link.menu, #nav:target a.top-link.menu {
     /**
         
     **/
-    top: 0;
     visibility: hidden;
     opacity: 0; }
-  #nav:target a.top-link.close {
+  #nav.open a.top-link.close, #nav:target a.top-link.close {
     /**
         
     **/
@@ -403,36 +408,32 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    display: block; }
-    #nav:target a.top-link.close i {
+    display: block;
+    visibility: visible;
+    opacity: 1; }
+    #nav.open a.top-link.close i, #nav:target a.top-link.close i {
       /**
           
       **/
-      display: none;
-      width: 74px; }
+      display: none; }
     @media (max-width: 500px) {
-      #nav:target a.top-link.close {
+      #nav.open a.top-link.close, #nav:target a.top-link.close {
         /**
             
-        **/
-        padding: 0; }
-        #nav:target a.top-link.close span {
+        **/ }
+        #nav.open a.top-link.close span, #nav:target a.top-link.close span {
           /**
               
           **/
           display: none; }
-        #nav:target a.top-link.close i {
+        #nav.open a.top-link.close i, #nav:target a.top-link.close i {
           /**
               
           **/
           display: block;
-          position: relative;
-          float: left;
-          top: 50%;
-          transform: translateY(-50%);
           font-size: 1.5em;
           color: white; } }
-  #nav:target .ph-logo {
+  #nav.open .ph-logo, #nav:target .ph-logo {
     /**
         
     **/
@@ -444,7 +445,7 @@
     transition: all 0.1s ease-in;
     -webkit-transition-delay: 0.15s;
     transition-delay: 0.15s; }
-  #nav:target .social-links {
+  #nav.open .social-links, #nav:target .social-links {
     /**
         
     **/
@@ -456,22 +457,22 @@
     transition: all 0.1s ease-in;
     -webkit-transition-delay: 0.15s;
     transition-delay: 0.15s; }
-  #nav:target .ph-mid.open {
+  #nav.open .ph-mid.open, #nav:target .ph-mid.open {
     /**
         
     **/
     display: block; }
-  #nav:target .ph-mid.closed {
+  #nav.open .ph-mid.closed, #nav:target .ph-mid.closed {
     /**
         
     **/
     display: none; }
   @media (max-width: 500px) {
-    #nav:target {
+    #nav.open, #nav:target {
       /**
           
       **/ }
-      #nav:target #bottom-closer {
+      #nav.open #bottom-closer, #nav:target #bottom-closer {
         /**
             
         **/
@@ -488,7 +489,7 @@
         transition: opacity 0.1s ease-in;
         -webkit-transition-delay: 0.15s;
         transition-delay: 0.15s; }
-        #nav:target #bottom-closer span {
+        #nav.open #bottom-closer span, #nav:target #bottom-closer span {
           /**
               
           **/
@@ -498,7 +499,7 @@
           top: -5px;
           left: 0;
           transform: none; }
-        #nav:target #bottom-closer i {
+        #nav.open #bottom-closer i, #nav:target #bottom-closer i {
           /**
               
           **/

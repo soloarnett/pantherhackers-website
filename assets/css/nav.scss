@@ -35,14 +35,6 @@
             //{ ** INCLUDES
                 @include transition(all, 0s, 0s);
             //} ** END INCLUDES
-            
-            //{ ** NESTED
-                
-            //} ** END NESTED
-            
-            //{ ** MOBILE
-                
-            //} ** END MOBILE
         }
         a.top-link{
             //{ ** DESCRIPTION
@@ -68,6 +60,7 @@
             
             //{ ** NESTED
                 span{
+                    width: 74px;
                     position: relative;
                     float: left;
                     font-size: 1.5em;
@@ -115,19 +108,66 @@
             
             //{ ** ATTRIBUTES
                 z-index: 999;
+                top: 0;
+                display: block;
             //} ** END ATTRIBUTES
             
             //{ ** INCLUDES
-                @include absoluteMiddle();
-
+                @include absoluteMiddleX();
             //} ** END INCLUDES
             
             //{ ** NESTED
-                
+                i{
+                    //{ ** DESCRIPTION
+                        /**
+                            
+                        **/
+                    //} ** END DESCRIPTION
+                    
+                    //{ ** ATTRIBUTES
+                        display: none;
+                        color: white;
+                    //} ** END ATTRIBUTES
+                }
             //} ** END NESTED
             
             //{ ** MOBILE
-                
+                @media(max-width:500px){
+                    //{ ** DESCRIPTION
+                        /**
+                            
+                        **/
+                    //} ** END DESCRIPTION
+                    
+                    //{ ** ATTRIBUTES
+                        padding: 0px calc(100%/12);
+                    //} ** END ATTRIBUTES
+                    
+                    //{ ** NESTED
+                        span{
+                            //{ ** DESCRIPTION
+                                /**
+                                    
+                                **/
+                            //} ** END DESCRIPTION
+                            
+                            //{ ** ATTRIBUTES
+                                display: none;
+                            //} ** END ATTRIBUTES
+                        }
+                        i{
+                            //{ ** DESCRIPTION
+                                /**
+                                    
+                                **/
+                            //} ** END DESCRIPTION
+                            
+                            //{ ** ATTRIBUTES
+                                display: block;
+                            //} ** END ATTRIBUTES
+                        }
+                    //} ** END NESTED
+                }
             //} ** END MOBILE
                     
         }
@@ -700,126 +740,7 @@
                 
             //} ** END MOBILE
         }
-        a.top-link.menu{
-            //{ ** DESCRIPTION
-                /**
-                    
-                **/
-            //} ** END DESCRIPTION
-            
-            //{ ** ATTRIBUTES
-                display: block;
-            //} ** END ATTRIBUTES
-            
-            //{ ** INCLUDES
-                
-            //} ** END INCLUDES
-            
-            //{ ** NESTED
-                i{
-                    //{ ** DESCRIPTION
-                        /**
-                            
-                        **/
-                    //} ** END DESCRIPTION
-                    
-                    //{ ** ATTRIBUTES
-                        display: none;
-                        color: white;
-                    //} ** END ATTRIBUTES
-                    
-                    //{ ** INCLUDES
-                        
-                    //} ** END INCLUDES
-                    
-                    //{ ** NESTED
-                        
-                    //} ** END NESTED
-                    
-                    //{ ** MOBILE
-                        
-                    //} ** END MOBILE
-                }
-            //} ** END NESTED
-            
-            //{ ** MOBILE
-                @media(max-width:500px){
-                    //{ ** DESCRIPTION
-                        /**
-                            
-                        **/
-                    //} ** END DESCRIPTION
-                    
-                    //{ ** ATTRIBUTES
-                        padding: 0px calc(100%/12);
-                    //} ** END ATTRIBUTES
-                    
-                    //{ ** INCLUDES
-                        
-                    //} ** END INCLUDES
-                    
-                    //{ ** NESTED
-                        span{
-                            //{ ** DESCRIPTION
-                                /**
-                                    
-                                **/
-                            //} ** END DESCRIPTION
-                            
-                            //{ ** ATTRIBUTES
-                                display: none;
-                            //} ** END ATTRIBUTES
-                            
-                            //{ ** INCLUDES
-                                
-                            //} ** END INCLUDES
-                            
-                            //{ ** NESTED
-                                
-                            //} ** END NESTED
-                            
-                            //{ ** MOBILE
-                                
-                            //} ** END MOBILE
-                        }
-                        i{
-                            //{ ** DESCRIPTION
-                                /**
-                                    
-                                **/
-                            //} ** END DESCRIPTION
-                            
-                            //{ ** ATTRIBUTES
-                                display: block;
-                                position: relative;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate(-50%, -50%);
-                                font-size: 1.5em;
-                            //} ** END ATTRIBUTES
-                            
-                            //{ ** INCLUDES
-                                
-                            //} ** END INCLUDES
-                            
-                            //{ ** NESTED
-                                
-                            //} ** END NESTED
-                            
-                            //{ ** MOBILE
-                                
-                            //} ** END MOBILE
-                        }
-                    //} ** END NESTED
-                    
-                    //{ ** MOBILE
-                        
-                    //} ** END MOBILE
-                    
-                }
-            //} ** END MOBILE
-            
-        }
+        
         a.top-link.close{
             //{ ** DESCRIPTION
                 /**
@@ -829,6 +750,8 @@
             
             //{ ** ATTRIBUTES
                 display: none;
+                visibility: hidden;
+                opacity: 0;
             //} ** END ATTRIBUTES
             
             //{ ** INCLUDES
@@ -857,14 +780,35 @@
                 bottom: 0;
                 // min-width: 389px;
             //} ** END ATTRIBUTES
-            
-            //{ ** INCLUDES
-                
-            //} ** END INCLUDES
-            
+
             //{ ** NESTED
-                a.top-link.menu{
-                    padding: 0;
+                a.top-link.menu, a.top-link.close{
+                    //{ ** DESCRIPTION
+                        /**
+                            used to increase non visible space that the menu button takes up so that users
+                            on mobile devices will find it easier to press the button. reduces mispresses 
+                        **/
+                    //} ** END DESCRIPTION
+
+                    //{ ** ATTRIBUTES
+                        padding: 0;
+                        padding-left: 100px; 
+                    //} ** END ATTRIBUTES
+                            
+                    //{ ** NESTED
+                        i{
+
+                            //{ ** ATTRIBUTES
+                                padding-right: 100px;
+                                position: relative;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                font-size: 1.5em;
+                            //} ** END ATTRIBUTES
+                            
+                        }
+                    //} ** END NESTED
                 }
                 .nav-content{
                     //{ ** DESCRIPTION
@@ -893,11 +837,6 @@
                             font-weight: 800;
                         }
                     //} ** END NESTED
-                    
-                    //{ ** MOBILE
-                        
-                    //} ** END MOBILE
-                            
                 }
                 
                 .ph-logo{
@@ -910,17 +849,12 @@
                         display: none;
                     }
                 }
-
             //} ** END NESTED
-            
-            //{ ** MOBILE
-                
-            //} ** END MOBILE
         }
     //} ** END MOBILE     
 }
 
-#nav:target{
+#nav.open, #nav:target{
     //{ ** DESCRIPTION
         /**
             
@@ -928,12 +862,8 @@
     //} ** END DESCRIPTION
     
     //{ ** ATTRIBUTES
-        height: 100vh;
+        height: 100%;
     //} ** END ATTRIBUTES
-    
-    //{ ** INCLUDES
-        
-    //} ** END INCLUDES
     
     //{ ** NESTED
         a.top-link.menu{
@@ -944,22 +874,9 @@
             //} ** END DESCRIPTION
             
             //{ ** ATTRIBUTES
-                top: 0;
                 visibility: hidden;
                 opacity: 0;
             //} ** END ATTRIBUTES
-            
-            //{ ** INCLUDES
-                // @include transition(all, 0s, 0.2s);
-            //} ** END INCLUDES
-            
-            //{ ** NESTED
-                
-            //} ** END NESTED
-            
-            //{ ** MOBILE
-                
-            //} ** END MOBILE
         }
         a.top-link.close{
             //{ ** DESCRIPTION
@@ -974,6 +891,8 @@
                 left: 50%;
                 transform: translateX(-50%);
                 display: block;
+                visibility: visible;
+                opacity: 1;
             //} ** END ATTRIBUTES
             
             //{ ** INCLUDES
@@ -990,20 +909,8 @@
                     
                     //{ ** ATTRIBUTES
                         display: none;
-                        width: 74px;
+                        // width: 74px;
                     //} ** END ATTRIBUTES
-                    
-                    //{ ** INCLUDES
-                        
-                    //} ** END INCLUDES
-                    
-                    //{ ** NESTED
-                        
-                    //} ** END NESTED
-                    
-                    //{ ** MOBILE
-                        
-                    //} ** END MOBILE
                 }
             //} ** END NESTED
             
@@ -1014,10 +921,6 @@
                             
                         **/
                     //} ** END DESCRIPTION
-                    
-                    //{ ** ATTRIBUTES
-                        padding: 0;
-                    //} ** END ATTRIBUTES
                     
                     //{ ** INCLUDES
                         span{
@@ -1030,18 +933,6 @@
                             //{ ** ATTRIBUTES
                                 display: none;
                             //} ** END ATTRIBUTES
-                            
-                            //{ ** INCLUDES
-                                
-                            //} ** END INCLUDES
-                            
-                            //{ ** NESTED
-                                
-                            //} ** END NESTED
-                            
-                            //{ ** MOBILE
-                                
-                            //} ** END MOBILE
                         }
                         i{
                             //{ ** DESCRIPTION
@@ -1052,35 +943,11 @@
                             
                             //{ ** ATTRIBUTES
                                 display: block;
-                                position: relative;
-                                float: left;
-                                top: 50%;
-                                transform: translateY(-50%);
                                 font-size: 1.5em;
                                 color: white;
                             //} ** END ATTRIBUTES
-                            
-                            //{ ** INCLUDES
-                                
-                            //} ** END INCLUDES
-                            
-                            //{ ** NESTED
-                                
-                            //} ** END NESTED
-                            
-                            //{ ** MOBILE
-                                
-                            //} ** END MOBILE
                         }
                     //} ** END INCLUDES
-                    
-                    //{ ** NESTED
-                        
-                    //} ** END NESTED
-                    
-                    //{ ** MOBILE
-                        
-                    //} ** END MOBILE
                 }
             //} ** END MOBILE
         }
@@ -1099,14 +966,6 @@
             //{ ** INCLUDES
                 @include transition(all, 0.1s, 0.15s);
             //} ** END INCLUDES
-            
-            //{ ** NESTED
-                
-            //} ** END NESTED
-            
-            //{ ** MOBILE
-                
-            //} ** END MOBILE
         }
         .social-links{
             //{ ** DESCRIPTION
@@ -1123,14 +982,6 @@
             //{ ** INCLUDES
                 @include transition(all, 0.1s, 0.15s);
             //} ** END INCLUDES
-            
-            //{ ** NESTED
-                
-            //} ** END NESTED
-            
-            //{ ** MOBILE
-                
-            //} ** END MOBILE
         }
         .ph-mid.open{
             //{ ** DESCRIPTION
@@ -1142,18 +993,6 @@
             //{ ** ATTRIBUTES
                 display: block;
             //} ** END ATTRIBUTES
-            
-            //{ ** INCLUDES
-                
-            //} ** END INCLUDES
-            
-            //{ ** NESTED
-                
-            //} ** END NESTED
-            
-            //{ ** MOBILE
-                
-            //} ** END MOBILE
         }
         .ph-mid.closed{
             //{ ** DESCRIPTION
@@ -1165,18 +1004,6 @@
             //{ ** ATTRIBUTES
                 display: none;
             //} ** END ATTRIBUTES
-            
-            //{ ** INCLUDES
-                
-            //} ** END INCLUDES
-            
-            //{ ** NESTED
-                
-            //} ** END NESTED
-            
-            //{ ** MOBILE
-                
-            //} ** END MOBILE
         }
     //} ** END NESTED
     
@@ -1187,10 +1014,6 @@
                     
                 **/
             //} ** END DESCRIPTION
-            
-            //{ ** ATTRIBUTES
-                
-            //} ** END ATTRIBUTES
             
             //{ ** INCLUDES
                 #bottom-closer{
@@ -1231,17 +1054,6 @@
                                 transform: none;
                             //} ** END ATTRIBUTES
                             
-                            //{ ** INCLUDES
-                                
-                            //} ** END INCLUDES
-                            
-                            //{ ** NESTED
-                                
-                            //} ** END NESTED
-                            
-                            //{ ** MOBILE
-                                
-                            //} ** END MOBILE
                         }
                         i{
                             //{ ** DESCRIPTION
@@ -1257,34 +1069,10 @@
                                 font-size: 1.5em;
                                 color: white;
                             //} ** END ATTRIBUTES
-                            
-                            //{ ** INCLUDES
-                                
-                            //} ** END INCLUDES
-                            
-                            //{ ** NESTED
-                                
-                            //} ** END NESTED
-                            
-                            //{ ** MOBILE
-                                
-                            //} ** END MOBILE
                         }
                     //} ** END NESTED
-                    
-                    //{ ** MOBILE
-                        
-                    //} ** END MOBILE
                 }
             //} ** END INCLUDES
-            
-            //{ ** NESTED
-                
-            //} ** END NESTED
-            
-            //{ ** MOBILE
-                
-            //} ** END MOBILE
         }
     //} ** END MOBILE
 }
