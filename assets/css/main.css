@@ -393,7 +393,7 @@
   /**
       
   **/
-  height: 100%; }
+  height: calc(100vh - 60px); }
   #nav.open a.top-link.menu, #nav:target a.top-link.menu {
     /**
         
